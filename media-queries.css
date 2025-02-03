@@ -2,8 +2,8 @@
 @media (max-width: 768px) {
     /* Make the gallery display a single image */
     .gallery {
-        grid-template-columns: 1fr; /* Only 1 image in a row */
-        gap: 20px; /* Space between the images */
+        grid-template-columns: 1fr; /* Only 1 image per row */
+        gap: 10px; /* Adjust space between images */
     }
 
     /* Hide all gallery items */
@@ -17,9 +17,9 @@
         margin: 0 auto; /* Center the middle image */
     }
 
-    /* Optional: Adjust the size of the middle image */
+    /* Adjust the middle image size */
     .gallery-item:nth-child(3) .thumbnail {
-        width: 90%; /* Slightly smaller */
+        width: 100%; /* Make the middle image fill the container */
         height: auto; /* Maintain aspect ratio */
     }
 }
@@ -27,11 +27,10 @@
 /* Smaller mobile layout (screens smaller than 480px) */
 @media (max-width: 480px) {
     .gallery {
-        grid-template-columns: 1fr; /* Only 1 image in a row */
+        grid-template-columns: 1fr; /* Ensure it's a single column */
     }
 
-    /* Middle image stays centered and is not too large */
     .gallery-item:nth-child(3) .thumbnail {
-        width: 80%; /* Even smaller for very small screens */
+        width: 100%; /* Keep image size appropriate for very small screens */
     }
 }
