@@ -1,44 +1,35 @@
-/* media-queries.css */
+/* Default gallery layout (desktop) */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 images in a row */
+    gap: 10px;
+    justify-content: center;
+    margin: 0;
+}
+
+/* Make the middle image larger */
+.gallery-item:nth-child(3) .thumbnail {
+    transform: scale(1.2); /* Make the middle image 20% larger */
+    z-index: 10; /* Ensure it stays on top */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hide all images except the middle one on mobile */
 @media (max-width: 768px) {
     .gallery {
-        grid-template-columns: repeat(3, 1fr); /* 3 images per row */
-    }
-    .header-text {
-        font-size: 3rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery {
-        grid-template-columns: repeat(2, 1fr); /* 2 images per row */
-    }
-    .header-text {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        padding: 10px; /* Add breathing room */
+        grid-template-columns: 1fr; /* Show images in one column */
     }
 
-    .gallery {
-        grid-template-columns: repeat(2, 1fr); /* 2 images per row */
-        gap: 5px; /* Reduce spacing */
+    .gallery-item {
+        display: none; /* Hide all images */
     }
 
-    .header-container {
-        height: auto; /* Remove full-screen height if needed */
+    .gallery-item:nth-child(3) {
+        display: block; /* Show only the middle image */
     }
 
-    .header-text {
-        font-size: 2rem; /* Smaller text for smaller screens */
-        text-align: center; /* Center text */
-    }
-
-    .header-text2 {
-        font-size: 1.2rem;
-        width: 100%;
-        text-align: center;
+    /* Optional: Make the middle image larger */
+    .gallery-item:nth-child(3) .thumbnail {
+        transform: scale(1.5); /* Make it even larger for mobile */
     }
 }
