@@ -14,12 +14,13 @@
     /* Show only the middle image (3rd item) */
     .gallery-item:nth-child(3) {
         display: block;
+        margin: 0 auto; /* Center the middle image */
     }
 
-    /* Optionally, make the middle image smaller */
+    /* Optional: Adjust the size of the middle image */
     .gallery-item:nth-child(3) .thumbnail {
-        transform: scale(0.9); /* Slightly smaller middle image */
-        transition: transform 0.3s ease-in-out;
+        width: 90%; /* Slightly smaller */
+        height: auto; /* Maintain aspect ratio */
     }
 }
 
@@ -31,6 +32,6 @@
 
     /* Middle image stays centered and is not too large */
     .gallery-item:nth-child(3) .thumbnail {
-        transform: scale(0.85); /* Even smaller for very small screens */
+        width: 80%; /* Even smaller for very small screens */
     }
 }
