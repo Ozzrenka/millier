@@ -1,35 +1,37 @@
-/* Default gallery layout (desktop) */
+/* Gallery container */
 .gallery {
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* 5 images in a row */
-    gap: 10px;
+    gap: 10px; /* Space between images */
     justify-content: center;
     margin: 0;
 }
 
-/* Make the middle image larger */
+/* Make the middle image larger on desktop */
 .gallery-item:nth-child(3) .thumbnail {
     transform: scale(1.2); /* Make the middle image 20% larger */
-    z-index: 10; /* Ensure it stays on top */
+    z-index: 10; /* Bring it to the front */
     transition: transform 0.3s ease-in-out;
 }
 
-/* Hide all images except the middle one on mobile */
+/* Mobile-specific layout */
 @media (max-width: 768px) {
     .gallery {
-        grid-template-columns: 1fr; /* Show images in one column */
+        grid-template-columns: 1fr; /* 1 image per row */
     }
 
+    /* Hide all gallery items */
     .gallery-item {
-        display: none; /* Hide all images */
+        display: none;
     }
 
+    /* Show only the middle image */
     .gallery-item:nth-child(3) {
-        display: block; /* Show only the middle image */
+        display: block;
     }
 
-    /* Optional: Make the middle image larger */
+    /* Optionally make the middle image even larger on mobile */
     .gallery-item:nth-child(3) .thumbnail {
-        transform: scale(1.5); /* Make it even larger for mobile */
+        transform: scale(1.5); /* Make the middle image even larger */
     }
 }
