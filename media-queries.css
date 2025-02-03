@@ -1,24 +1,9 @@
-/* Gallery container */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 images in a row */
-    gap: 15px; /* Space between the images */
-    justify-content: center;
-    margin: 0;
-}
-
-/* Make the middle image smaller */
-.gallery-item:nth-child(3) .thumbnail {
-    transform: scale(0.9); /* Make the middle image 10% smaller */
-    z-index: 1; /* Keeps it behind the other images */
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Mobile-specific layout */
+/* Mobile layout (screens smaller than 768px) */
 @media (max-width: 768px) {
+    /* Make the gallery display a single image */
     .gallery {
-        grid-template-columns: 1fr; /* 1 image per row */
-        gap: 20px; /* Larger gap between images */
+        grid-template-columns: 1fr; /* Only 1 image in a row */
+        gap: 20px; /* Space between the images */
     }
 
     /* Hide all gallery items */
@@ -26,13 +11,26 @@
         display: none;
     }
 
-    /* Show only the middle image */
+    /* Show only the middle image (3rd item) */
     .gallery-item:nth-child(3) {
         display: block;
     }
 
-    /* Make the middle image smaller on mobile */
+    /* Optionally, make the middle image smaller */
     .gallery-item:nth-child(3) .thumbnail {
-        transform: scale(0.8); /* Make the middle image smaller */
+        transform: scale(0.9); /* Slightly smaller middle image */
+        transition: transform 0.3s ease-in-out;
+    }
+}
+
+/* Smaller mobile layout (screens smaller than 480px) */
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* Only 1 image in a row */
+    }
+
+    /* Middle image stays centered and is not too large */
+    .gallery-item:nth-child(3) .thumbnail {
+        transform: scale(0.85); /* Even smaller for very small screens */
     }
 }
