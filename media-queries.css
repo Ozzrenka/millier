@@ -17,3 +17,28 @@
     }
 }
 
+@media (max-width: 480px) {
+    body {
+        padding: 10px; /* Add breathing room */
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+        gap: 5px; /* Reduce spacing */
+    }
+
+    .header-container {
+        height: auto; /* Remove full-screen height if needed */
+    }
+
+    .header-text {
+        font-size: 2rem; /* Smaller text for smaller screens */
+        text-align: center; /* Center text */
+    }
+
+    .header-text2 {
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: center;
+    }
+}
