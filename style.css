@@ -606,3 +606,47 @@ nav .fas{
     animation: logoAnimation 2s ease-in-out infinite; /* Adds the animation */
     transition: transform 0.3s ease-in-out;
 }
+
+ /* Responsive Gallery */
+@media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(4, 1fr); /* 4 images in a row for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr); /* 3 images in a row */
+        gap: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 images in a row for mobile */
+        gap: 5px;
+    }
+}
+@media (max-width: 768px) {
+    .header-text {
+        font-size: 3rem;
+    }
+    .header-text2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-text {
+        font-size: 2.2rem;
+    }
+    .header-text2 {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 480px) {
+    #modalImage {
+        max-width: 95%;
+        max-height: 80vh;
+    }
+}
